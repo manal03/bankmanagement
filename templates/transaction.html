@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>  
+    <link rel="stylesheet" href="static/css/main.css">
+</head>
+<body class="bg-[#f6c2eb]">
+    <h1 class="text-3xl text-center">Withdrawals/Transactions</h1>
+    <form action='/transaction' method='post'>
+        <div class="flex justify-center items-center h-screen">
+            <div class="h-96 w-3/6 text-center bg-[#eb71d1] p-6 rounded-md">
+                <div class="flex items-center justify-between mb-4">
+                    <label class="text-gray-700 text-sm font-bold w-1/3" for="name">Username</label>
+                    <input class="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" name="name" type="text" placeholder="Username">
+                </div>
+                <div class="flex items-center justify-between mb-4">
+                    <label class="w-1/3">Type Of Account</label>
+                    <select id="inputState" class="form-control w-2/3" name="option">
+                        <option selected>Choose...</option>
+                        <option value="credit">Credit</option>
+                        <option value="savings">Savings</option>
+                        <option value="checking">Banking</option>
+                    </select>
+                </div>
+                <div class="flex items-center justify-between mb-4">
+                    <label class="w-1/3">Deposit Type</label>
+                    <select id="inputState" class="form-control w-2/3" name="option2">
+                        <option selected>Choose...</option>
+                        <option value="withdrawal">Withdrawal</option>
+                        <option value="deposit">Deposit</option>
+                    </select>
+                </div>
+                <div class="flex items-center justify-between mb-4">
+                    <label class="w-1/3">Amount</label>
+                    <input type="text" class="form-control w-2/3" placeholder="$" name="amount2">
+                </div>
+                <div class="flex justify-center">
+                    <button type="submit" class="bg-white p-2 rounded">Submit</button>
+                </div>
+                {% if error %}
+                <h1>{{ error }}</h1>
+                {% endif %}
+            </div>
+        </div>
+    </form>
+</body>
+</html>

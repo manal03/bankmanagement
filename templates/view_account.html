@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/main.css">
+
+</head>
+<body>
+    <h1 class="text-3xl text-center">Bank Accounts</h1>
+          <div class="account-container">
+        {% for account in accounts %}
+              <div class="account-item p-5 m-5 outline outline-offset-2 outline-1">
+            <p class="text-xl font-bold">User: {{ account.name }}</p>
+        <ul class="list-none">
+          <li class="">Balance: {{ account.balance }}</li>
+          <li class="">Type of Banking: {{ account.option }}</li>
+        </ul>
+        </div>
+            
+        {% endfor %}
+      </div>
+    <p><a href="{{ url_for('main') }}">Back to Home</a></p>
+  </body>
+</html>
